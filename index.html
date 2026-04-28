@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spendwise</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">S</div>
+          <div>
+            <h1>Spendwise</h1>
+            <p>Personal finance tracker</p>
+          </div>
+        </div>
+
+        <nav class="nav-tabs" aria-label="Dashboard sections">
+          <button class="nav-button active" data-view="overview">Overview</button>
+          <button class="nav-button" data-view="transactions">Transactions</button>
+          <button class="nav-button" data-view="bills">Monthly bills</button>
+          <button class="nav-button" data-view="repayments">Repayments</button>
+          <button class="nav-button" data-view="insights">Insights</button>
+        </nav>
+
+        <section class="quick-panel">
+          <h2>This month</h2>
+          <div class="mini-row">
+            <span>Income</span>
+            <strong id="sideIncome">Rs 0</strong>
+          </div>
+          <div class="mini-row">
+            <span>Spent</span>
+            <strong id="sideSpent">Rs 0</strong>
+          </div>
+          <div class="mini-row">
+            <span>Balance</span>
+            <strong id="sideBalance">Rs 0</strong>
+          </div>
+        </section>
+      </aside>
+
+      <section class="content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Money control center</p>
+            <h2 id="viewTitle">Overview</h2>
+          </div>
+          <div class="top-actions">
+            <button class="ghost-button" id="seedDemo">Load demo</button>
+            <button class="danger-button" id="clearData">Clear all</button>
+          </div>
+        </header>
+
+        <section class="view active" id="overview">
+          <div class="metrics-grid">
+            <article class="metric">
+              <span>Total income</span>
+              <strong id="totalIncome">Rs 0</strong>
+            </article>
+            <article class="metric">
+              <span>Total spends</span>
+              <strong id="totalSpend">Rs 0</strong>
+            </article>
+            <article class="metric">
+              <span>Upcoming bills</span>
+              <strong id="upcomingBills">0</strong>
+            </article>
+            <article class="metric">
+              <span>Pending repayments</span>
+              <strong id="pendingRepayments">Rs 0</strong>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="panel">
+              <div class="panel-heading">
+                <h3>Spend by category</h3>
+                <span id="largestCategory">No spending yet</span>
+              </div>
+              <div id="categoryBars" class="bar-list"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-heading">
+                <h3>Due soon</h3>
+                <span>Next 7 days</span>
+              </div>
+              <div id="dueSoonList" class="stack-list"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" id="transactions">
+          <div class="split-layout">
+            <form class="panel form-panel" id="transactionForm">
+              <h3>Add transaction</h3>
+
+              <label>
+                Amount
+                <input required type="number" min="1" step="1" name="amount" placeholder="2500" />
+              </label>
+
+              <label>
+                Type
+                <select name="type">
+                  <option value="expense">Expense</option>
+                  <option value="income">Income</option>
+                </select>
+              </label>
+
+              <label>
+                Category
+                <select name="category">
+                  <option>Food</option>
+                  <option>Transport</option>
+                  <option>Shopping</option>
+                  <option>Entertainment</option>
+                  <option>Health</option>
+                  <option>Education</option>
+                  <option>Salary</option>
+                  <option>Other</option>
+                </select>
+              </label>
+
+              <label>
+                Note
+                <input required name="note" placeholder="Dinner, salary, cab..." />
+              </label>
+
+              <label>
+                Date
+                <input required type="date" name="date" />
+              </label>
+
+              <button class="primary-button" type="submit">Add transaction</button>
+            </form>
+
+            <section class="panel">
+              <div class="panel-heading">
+                <h3>Recent transactions</h3>
+                <span id="transactionCount">0 entries</span>
+              </div>
+              <div id="transactionList" class="stack-list"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" id="bills">
+          <div class="split-layout">
+            <form class="panel form-panel" id="billForm">
+              <h3>Add monthly bill</h3>
+
+              <label>
+                Bill name
+                <input required name="name" placeholder="Rent, Netflix, electricity" />
+              </label>
+
+              <label>
+                Amount
+                <input required type="number" min="1" step="1" name="amount" placeholder="1200" />
+              </label>
+
+              <label>
+                Due day
+                <input required type="number" min="1" max="31" name="dueDay" placeholder="5" />
+              </label>
+
+              <label>
+                Status
+                <select name="status">
+                  <option value="unpaid">Unpaid</option>
+                  <option value="paid">Paid</option>
+                </select>
+              </label>
+
+              <button class="primary-button" type="submit">Add bill</button>
+            </form>
+
+            <section class="panel">
+              <div class="panel-heading">
+                <h3>Bill tracker</h3>
+                <span id="billCount">0 bills</span>
+              </div>
+              <div id="billList" class="stack-list"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" id="repayments">
+          <div class="split-layout">
+            <form class="panel form-panel" id="repaymentForm">
+              <h3>Add repayment</h3>
+
+              <label>
+                Person / lender
+                <input required name="name" placeholder="Friend, bank, card" />
+              </label>
+
+              <label>
+                Total amount
+                <input required type="number" min="1" step="1" name="total" placeholder="10000" />
+              </label>
+
+              <label>
+                Paid amount
+                <input required type="number" min="0" step="1" name="paid" placeholder="2500" />
+              </label>
+
+              <label>
+                Due date
+                <input required type="date" name="dueDate" />
+              </label>
+
+              <button class="primary-button" type="submit">Add repayment</button>
+            </form>
+
+            <section class="panel">
+              <div class="panel-heading">
+                <h3>Repayment tracker</h3>
+                <span id="repaymentCount">0 plans</span>
+              </div>
+              <div id="repaymentList" class="stack-list"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" id="insights">
+          <div class="dashboard-grid">
+            <section class="panel">
+              <div class="panel-heading">
+                <h3>Smart summary</h3>
+                <span>Auto-generated</span>
+              </div>
+              <div id="insightCards" class="insight-list"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-heading">
+                <h3>Category controls</h3>
+                <span>Fast filters</span>
+              </div>
+              <div id="categoryButtons" class="button-cloud"></div>
+              <div id="filteredTransactions" class="stack-list compact"></div>
+            </section>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
