@@ -1,4 +1,5 @@
-# 1st-Fintech-app
-Hey guys i am just trying to create a Fintech app to strengthen my basics in development you can have a look 
+# Fintech website
 
-visit my website now - https://rcbfanmonsters149.github.io/1st-Fintech-app/
+I worked on a fintech website that track's spending as a minor project 
+
+have a look now - https://rcbfanmonsters149.github.io/1st-Fintech-app/
