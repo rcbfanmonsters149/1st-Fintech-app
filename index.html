@@ -3,14 +3,212 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spendwise123</title>
+    <title>Spendwise — Personal Finance Tracker</title>
+    <meta name="description" content="Spendwise helps you track income, expenses, bills, and repayments in one beautiful dashboard. Sign up free." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="app-shell">
+
+    <!-- ═══════════════════════════════════════════
+         LANDING PAGE
+    ════════════════════════════════════════════ -->
+    <div id="landingPage">
+
+      <!-- NAV -->
+      <nav class="lp-nav">
+        <div class="lp-nav-brand">
+          <div class="brand-mark"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg></div>
+          <span>Spendwise</span>
+        </div>
+        <div class="lp-nav-actions">
+          <button class="lp-nav-login" id="navLoginBtn">Log In</button>
+          <button class="primary-button" id="navSignupBtn">Get Started</button>
+        </div>
+      </nav>
+
+      <!-- HERO -->
+      <section class="lp-hero">
+        <div class="lp-hero-content">
+          <div class="lp-badge">✦ Your personal money dashboard</div>
+          <h1 class="lp-headline">Take control of<br /><span class="lp-headline-accent">your money</span></h1>
+          <p class="lp-subline">Track every rupee, manage your bills, and gain smart insights — all in one beautiful, secure dashboard. Free forever.</p>
+          <div class="lp-hero-actions">
+            <button class="lp-cta-primary" id="heroSignupBtn">Get Started — It's Free</button>
+            <button class="lp-cta-secondary" id="heroLoginBtn">Log In →</button>
+          </div>
+          <p class="lp-hero-note">No credit card required · Secured by Firebase</p>
+        </div>
+
+        <!-- HERO DASHBOARD MOCKUP -->
+        <div class="lp-mockup">
+          <div class="lp-mockup-bar">
+            <span class="lp-mockup-dot red"></span>
+            <span class="lp-mockup-dot yellow"></span>
+            <span class="lp-mockup-dot green"></span>
+            <span class="lp-mockup-url">spendwise.app/dashboard</span>
+          </div>
+          <div class="lp-mockup-body">
+            <div class="lp-mockup-sidebar">
+              <div class="lp-mock-brand"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg></div>
+              <div class="lp-mock-nav-item active">Overview</div>
+              <div class="lp-mock-nav-item">Transactions</div>
+              <div class="lp-mock-nav-item">Bills</div>
+              <div class="lp-mock-nav-item">Insights</div>
+            </div>
+            <div class="lp-mockup-main">
+              <div class="lp-mock-metrics">
+                <div class="lp-mock-metric green-card">
+                  <div class="lp-mock-label">Income</div>
+                  <div class="lp-mock-value">₹65,000</div>
+                </div>
+                <div class="lp-mock-metric">
+                  <div class="lp-mock-label">Spent</div>
+                  <div class="lp-mock-value">₹18,200</div>
+                </div>
+                <div class="lp-mock-metric">
+                  <div class="lp-mock-label">Bills</div>
+                  <div class="lp-mock-value">3</div>
+                </div>
+                <div class="lp-mock-metric">
+                  <div class="lp-mock-label">Balance</div>
+                  <div class="lp-mock-value">₹46,800</div>
+                </div>
+              </div>
+              <div class="lp-mock-bars">
+                <div class="lp-mock-bar-row"><span>Food</span><div class="lp-mock-bar" style="width:70%"></div></div>
+                <div class="lp-mock-bar-row"><span>Shopping</span><div class="lp-mock-bar" style="width:45%"></div></div>
+                <div class="lp-mock-bar-row"><span>Transport</span><div class="lp-mock-bar" style="width:25%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="lp-features">
+        <div class="lp-features-header">
+          <h2>Everything you need to manage money smarter</h2>
+          <p>Built for everyday Indians who want clarity on where their money goes.</p>
+        </div>
+        <div class="lp-features-grid">
+          <article class="lp-feature-card">
+            <div class="lp-feature-icon">💰</div>
+            <h3>Track Income & Expenses</h3>
+            <p>Log every transaction in seconds. Categorise by food, transport, shopping and more. See your complete financial picture at a glance.</p>
+          </article>
+          <article class="lp-feature-card">
+            <div class="lp-feature-icon">📅</div>
+            <h3>Monthly Bill Reminders</h3>
+            <p>Never miss a payment. Add recurring bills like rent and electricity, mark them paid, and see what's due in the next 7 days on your overview.</p>
+          </article>
+          <article class="lp-feature-card">
+            <div class="lp-feature-icon">📊</div>
+            <h3>Smart Insights</h3>
+            <p>Instantly see your savings rate, biggest spending category, and outstanding bills. Auto-generated insights that actually help you save more.</p>
+          </article>
+          <article class="lp-feature-card">
+            <div class="lp-feature-icon">🔄</div>
+            <h3>Repayment Tracker</h3>
+            <p>Keep track of loans and debts with visual progress bars. Know exactly how much you still owe and by when — no more awkward forgotten debts.</p>
+          </article>
+          <article class="lp-feature-card">
+            <div class="lp-feature-icon">☁️</div>
+            <h3>Cloud Sync</h3>
+            <p>Your data is securely stored in the cloud. Log in from any device, anywhere, and all your transactions are right there waiting for you.</p>
+          </article>
+          <article class="lp-feature-card">
+            <div class="lp-feature-icon">🔒</div>
+            <h3>Secure & Private</h3>
+            <p>Powered by Firebase Auth. Your financial data is private to you — protected by industry-leading security so no one else can see your numbers.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- CTA BANNER -->
+      <section class="lp-cta-banner">
+        <h2>Ready to take control of your finances?</h2>
+        <p>Join thousands of users tracking their money with Spendwise. Free, forever.</p>
+        <button class="lp-cta-primary" id="bannerSignupBtn">Create Free Account</button>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="lp-footer">
+        <div class="lp-nav-brand">
+          <div class="brand-mark"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg></div>
+          <span>Spendwise</span>
+        </div>
+        <p>© 2025 Spendwise. Built with ❤️ for smarter spending.</p>
+      </footer>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         AUTH MODAL OVERLAY
+    ════════════════════════════════════════════ -->
+    <div id="authOverlay" class="auth-overlay" style="display:none;">
+      <div class="auth-modal">
+        <button class="auth-close-btn" id="authCloseBtn">✕</button>
+
+        <div class="auth-modal-brand">
+          <div class="brand-mark"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg></div>
+          <span>Spendwise</span>
+        </div>
+
+        <!-- TABS -->
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="tabLogin" data-tab="login">Log In</button>
+          <button class="auth-tab" id="tabSignup" data-tab="signup">Sign Up</button>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <div class="auth-panel" id="panelLogin">
+          <h2>Welcome back</h2>
+          <p class="auth-modal-sub">Sign in to your Spendwise account</p>
+          <form id="loginForm" class="auth-form">
+            <label>
+              Email
+              <input required type="email" id="loginEmail" placeholder="you@example.com" />
+            </label>
+            <label>
+              Password
+              <input required type="password" id="loginPassword" placeholder="••••••••" minlength="6" />
+            </label>
+            <button class="primary-button auth-submit-btn" type="submit">Log In</button>
+          </form>
+          <p class="auth-switch-text">Don't have an account? <button class="auth-switch-btn" id="switchToSignup">Sign Up</button></p>
+          <p id="loginError" class="auth-error-msg"></p>
+        </div>
+
+        <!-- SIGNUP FORM -->
+        <div class="auth-panel" id="panelSignup" style="display:none;">
+          <h2>Create your account</h2>
+          <p class="auth-modal-sub">Start tracking your finances for free</p>
+          <form id="signupForm" class="auth-form">
+            <label>
+              Email
+              <input required type="email" id="signupEmail" placeholder="you@example.com" />
+            </label>
+            <label>
+              Password <span class="auth-hint">(min. 6 characters)</span>
+              <input required type="password" id="signupPassword" placeholder="••••••••" minlength="6" />
+            </label>
+            <button class="primary-button auth-submit-btn" type="submit">Create Account</button>
+          </form>
+          <p class="auth-switch-text">Already have an account? <button class="auth-switch-btn" id="switchToLogin">Log In</button></p>
+          <p id="signupError" class="auth-error-msg"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         MAIN APP (hidden until logged in)
+    ════════════════════════════════════════════ -->
+    <main class="app-shell" id="appContainer" style="display: none;">
       <aside class="sidebar">
         <div class="brand">
-          <div class="brand-mark">S</div>
+          <div class="brand-mark"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg></div>
           <div>
             <h1>Spendwise</h1>
             <p>Personal finance tracker</p>
@@ -40,6 +238,27 @@
             <strong id="sideBalance">Rs 0</strong>
           </div>
         </section>
+
+        <!-- PROFILE BUBBLE -->
+        <div class="profile-bubble" id="profileBubble">
+          <div class="profile-avatar" id="profileAvatar">U</div>
+          <div class="profile-info">
+            <span class="profile-name">My Account</span>
+            <span class="profile-email" id="profileEmail">Loading...</span>
+          </div>
+          <!-- Profile Popup -->
+          <div class="profile-popup" id="profilePopup">
+            <div class="profile-popup-header">
+              <div class="profile-popup-avatar" id="profilePopupAvatar">U</div>
+              <div>
+                <div class="profile-popup-label">Signed in as</div>
+                <div class="profile-popup-email" id="profilePopupEmail">Loading...</div>
+              </div>
+            </div>
+            <div class="profile-popup-divider"></div>
+            <button class="profile-popup-signout" id="profileSignOut">Sign Out</button>
+          </div>
+        </div>
       </aside>
 
       <section class="content">
@@ -80,7 +299,9 @@
                 <h3>Spend by category</h3>
                 <span id="largestCategory">No spending yet</span>
               </div>
-              <div id="categoryBars" class="bar-list"></div>
+              <div class="chart-container" style="position: relative; height:240px; width:100%; display: flex; justify-content: center;">
+                <canvas id="spendChart"></canvas>
+              </div>
             </section>
 
             <section class="panel">
@@ -249,7 +470,7 @@
         </section>
       </section>
     </main>
-
-    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>
